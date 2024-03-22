@@ -4,8 +4,8 @@
   "description": "Rest Api with express and TypeORM",
   "scripts": {
     "build": "npx tsc",
-    "start-server": " node dist/server.js",
-    "start": "npm-run-all build start-server",
+    "start": " node dist/server.js",
+    "start-dev": "npm-run-all build start-server",
     "dev": "nodemon",
     "seed": "npx ts-node src/utils/populate.db.ts",
     "cleanDb": "npx ts-node src/utils/clean.db.ts"
