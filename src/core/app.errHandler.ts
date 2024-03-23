@@ -32,6 +32,11 @@ export default function (app: Application): void {
   app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
     logger.error(`last error catcher ==>${err.message}`);
     res.statusCode = 500;
-    return res.end(err.message + "\n");
+    return res.end(
+      JSON.stringify({
+        status: "error",
+        message: "somthing went wrong please try again later",
+      })
+    );
   });
 }
