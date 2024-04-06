@@ -1,6 +1,5 @@
 import { DataSource } from "typeorm";
-import { Book } from "../models/book.model";
-import { Author } from "../models/author.model";
+import { Book, Author } from "../entities";
 
 export const AppDataSrc = new DataSource({
   type: "postgres",
@@ -11,5 +10,5 @@ export const AppDataSrc = new DataSource({
   database: process.env.DB_NAME,
   entities: [Book, Author],
   synchronize: true,
-  logging: false,
+  logging: true,
 });

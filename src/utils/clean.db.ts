@@ -3,7 +3,7 @@ dotenv.config();
 import "reflect-metadata";
 
 import { AppDataSrc } from "../core/dataSource";
-import { Book } from "../models/book.model";
+import { Book } from "../entities/book";
 // import { Lesson } from "../models/lesson.model";
 
 async function deleteDb() {
