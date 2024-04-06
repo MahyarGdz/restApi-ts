@@ -1,8 +1,7 @@
 {
-  "watch": ["src",".env"],
+  "watch": ["src", ".env"],
   "ext": "ts,json",
   "events": {
     "start": "clear"
-  },
-  "exec": "npx ts-node src/server.ts"
+  }
 }

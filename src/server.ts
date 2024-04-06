@@ -5,12 +5,9 @@ dotenv.config();
 import ExpressApp from "./app";
 import { logger } from "./core/logger";
 import { AppDataSrc } from "./core/dataSource";
-import bookRouter from "./book/book.router";
-import appErrHandler from "./core/app.errHandler";
+import bookRouter from "./book/book.routes";
 
-
-
-const app = new ExpressApp([bookRouter], appErrHandler).getApp();
+const app = new ExpressApp([bookRouter]).getApp();
 const server = http.createServer(app);
 const port = process.env.PORT;
 
@@ -23,7 +20,7 @@ async function bootStrap(): Promise<void> {
     });
   } catch (error) {
     logger.error(error);
-    process.exit(1); 
+    process.exit(1);
   }
 }
 

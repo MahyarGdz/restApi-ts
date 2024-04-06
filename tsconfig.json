@@ -16,13 +16,13 @@
     "allowJs": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true,
     // "strictNullChecks": true,
     // "pretty": true,
     // "forceConsistentCasingInFileNames": true,
-    // "allowSyntheticDefaultImports": true,
     // "sourceMap": true,
-    // "declaration": true,
+    "declaration": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

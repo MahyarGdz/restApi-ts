@@ -2,11 +2,12 @@ import express, { Application, Router } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import compress from "compression";
+import { errorHandler, lastHandler, notFoundHandler } from "./core";
 
 class ExpressApp {
   private readonly app: Application;
 
-  constructor(private routers: Router[], private errorHandler: CallableFunction) {
+  constructor(private routers: Router[]) {
     this.app = express();
     this.setupPlugins();
     this.setupRouters();
@@ -25,11 +26,9 @@ class ExpressApp {
     this.routers.forEach((router) => {
       this.app.use(router);
     });
-    this.setupErrorHandler();
-  }
-
-  private setupErrorHandler() {
-    this.errorHandler(this.app);
+    this.app.use(notFoundHandler);
+    this.app.use(errorHandler);
+    this.app.use(lastHandler);
   }
 
   public getApp(): Application {
